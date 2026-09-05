@@ -1,0 +1,23 @@
+# Store everything with LF in the repo and check it out with LF, so the
+# tree is identical on macOS, Linux, and Windows.
+* text=auto eol=lf
+
+# SVG is XML, not a binary image — keep it diffable.
+*.svg text
+
+# Binary assets: never normalize line endings, never attempt a text diff.
+*.ico  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.avif binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+
+# Generated lockfile: collapse it in GitHub diffs and exclude it from
+# language stats. Local `git diff` still shows it.
+pnpm-lock.yaml linguist-generated=true
