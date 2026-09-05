@@ -47,3 +47,7 @@ next.config.ts  # Next config (React Compiler on)
 
 - This repo pins a Next.js version whose APIs and conventions differ from older releases. Check the bundled docs in `node_modules/next/dist/docs/` before reaching for remembered patterns — see `AGENTS.md`.
 - Tailwind v4 has no `tailwind.config.js`; theme tokens live in the `@theme inline` block in `src/app/globals.css`.
+
+## License
+
+[MIT](LICENSE) © 2026 Vidyesh Churi
