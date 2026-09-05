@@ -19,10 +19,13 @@ Web frontend for **Anime Qatoto**, an anime streaming and discovery app.
 
 ```bash
 pnpm install
+cp .env.example .env.local   # then fill in the values
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+Environment variables are documented in [`.env.example`](.env.example). `.env.local` is gitignored — keep real values out of the repo.
 
 ## Scripts
 
