@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# anime-qatoto-frontend
 
-## Getting Started
+Web frontend for **Anime Qatoto**, an anime streaming and discovery app.
 
-First, run the development server:
+> **Status:** early scaffold. The project is set up and running, but the anime-specific pages, data layer, and API integration are not built yet — `src/app/page.tsx` is still the starter page.
+
+## Tech stack
+
+| Layer | Choice |
+| --- | --- |
+| Framework | [Next.js](https://nextjs.org) 16.3.4 (App Router) |
+| UI | React 19.2.8 with the [React Compiler](https://react.dev/learn/react-compiler) enabled |
+| Styling | [Tailwind CSS](https://tailwindcss.com) v4 (CSS-first config in `src/app/globals.css`) |
+| Language | TypeScript 5 |
+| Fonts | Geist Sans + Geist Mono via `next/font` |
+| Package manager | pnpm 11.25.0 |
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | What it does |
+| --- | --- |
+| `pnpm dev` | Start the dev server |
+| `pnpm build` | Production build |
+| `pnpm start` | Serve the production build (run `pnpm build` first) |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/app/
+  layout.tsx    # root layout — fonts, global styles, html/body shell
+  page.tsx      # home page
+  globals.css   # Tailwind import + theme tokens (light/dark)
+public/         # static assets served at /
+next.config.ts  # Next config (React Compiler on)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes for contributors
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- This repo pins a Next.js version whose APIs and conventions differ from older releases. Check the bundled docs in `node_modules/next/dist/docs/` before reaching for remembered patterns — see `AGENTS.md`.
+- Tailwind v4 has no `tailwind.config.js`; theme tokens live in the `@theme inline` block in `src/app/globals.css`.
